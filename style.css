@@ -2,6 +2,9 @@
     padding: 0;
     margin: 0;
 }
+h1{
+    font-size: 60px;
+}
 
 body {
     background-color: rgb(206, 206, 243);
@@ -20,7 +23,7 @@ body {
 .navigation {
     background-color: rgb(32, 32, 112);
     position: sticky;
-    top: 37px;
+    top: 79px;
     padding-bottom: 1%;
 }
 
@@ -30,7 +33,7 @@ body {
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
-    font-variation-settings: "width" 100;
+  
 }
 
 .navigation a {
@@ -44,8 +47,12 @@ body {
 #cart {
     float: inline-end;
     margin-top: -12px;
-    padding-right: 3%;
+    background-color: rgb(22, 22, 83);;
+    color: aliceblue;
+    border-radius: 12px;
 }
+
+
 
 a:hover {
     background-color: rgba(7, 7, 48, 0.733);
@@ -61,7 +68,7 @@ a:hover {
     text-align: center;
 }
 
-li {
+#product-container li {
     background-color: rgb(156, 219, 219);
     width: 100%;
     max-width:320px ;
@@ -100,3 +107,4 @@ ul {
     background-color: white;
     color: black;
 }
+

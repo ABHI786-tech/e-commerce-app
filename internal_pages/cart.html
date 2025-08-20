@@ -5,12 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>add to cart</title>
-   <link rel="stylesheet" href="/e-commerce-app/style.css">
+    <link rel="stylesheet" href="/e-commerce-app/style.css">
+
     <style>
-        h2{
+        h2 {
             text-align: center;
-            font-size: 60px;
+            font-size: 40px;
         }
+
+        .clearAll {
+            float: inline-end;
+            margin-top: 15px;
+            margin-right: 6%;
+            background-color: rgb(22, 22, 83);
+            color: aliceblue;
+            padding: 9px;
+            border-radius: 7px;
+            margin-bottom: 15px;
+        }
+
+        #cartItem li {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: row;
+            width: 98%;
+            list-style-type: none;
+            border: 2px solid black;
+           margin-top: 12px;
+           box-shadow:6px 6px 6px 1px rgb(152, 152, 236);
+
+        }
+
+        .cart_li {
+            padding: 5px;
+            margin: 8px;
+        }
+        #rbtn{
+            background-color: rgb(22, 22, 83);
+            color: white;
+
+           
+        }
+        
     </style>
 </head>
 
@@ -18,33 +55,34 @@
     <div>
         <div class="box">
             <div class="header">
-                 <h1> MEGA STORE</h1>
+                <h1> MEGA STORE</h1>
             </div>
             <div class="navigation">
                 <a href="/e-commerce-app/index.html">home</a>
                 <a href="/e-commerce-app/internal_pages/about.html">about</a>
                 <a href="/e-commerce-app/internal_pages/contact us.html">contact</a>
                 <a href="/e-commerce-app/internal_pages/cart.html" id="cart">cart</a>
-            
+
 
             </div>
-            <h2>add to cart</h2>
             <div class="main">
 
-<div class="carts">
-    <h1>MY CART</h1>
-    <button class="clearAll" onclick="clear()"></button>
-    <div id="cartItem"></div>
-</div>
+                <h2>MY CART</h2>
+                <div class="carts">
+                    <button class="clearAll" onclick="clear()">clearall</button><br>
+                    <div id="cartItem">
+
+                    </div>
+                </div>
             </div>
             <div class="footer">
-                            copyright@ 2025 eco friendly website
-        </div>
+                copyright@ 2025 eco friendly website
+            </div>
         </div>
     </div>
     <script src="/e-commerce-app/script.js"></script>
     <script src="/e-commerce-app/internal_pages/cart.js"></script>
-    
+
 </body>
 
 </html>

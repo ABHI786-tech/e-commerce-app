@@ -24,7 +24,7 @@ fetch('https://dummyjson.com/products/')
       productli.innerHTML = productHTML;
       container.appendChild(productli);
     });
-  }).catch(error => console.error('Error fetching products:', error));
+  }).catch(error => console.log('Error fetching products:', error));
 
 // Localstorage Referance 
 let memory = JSON.parse(localStorage.getItem("order"))

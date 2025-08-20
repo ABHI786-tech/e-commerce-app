@@ -6,14 +6,20 @@ let itemData = JSON.parse(store)
 let cartParent = document.getElementById("cartItem")
 itemData.forEach((item) => {
     let cartChild =
-    `<img width="40px" src="${item.thumbnail}">
-    <h2>${item.title}</h2>
-    <p>${item.quantity}</p>
-    <button onclick="remove(${item.id})">remove</button>
+    `<img width="90px" src="${item.thumbnail}" class="cart_li">
+    <h3 class="cart_li">${item.title}</h3>
+    <p class="cart_li">${item.quantity}</p>
+    <button onclick="remove(${item.id})" class="cart_li" id="rbtn">remove</button>
     `
 //     console.log(cartChild)
 // console.log(item)
-cartParent.innerHTML +=cartChild;
+// cartChild = document.createElement("li")
+// cartParent.innerHTML +=cartChild;
+const cartlist = document.createElement("li");
+      cartlist.innerHTML = cartChild;
+      cartParent.appendChild(cartlist);
+
+
 });
 
 
