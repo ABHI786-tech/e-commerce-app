@@ -7,19 +7,18 @@ fetch(`https://dummyjson.com/products/${param}`)
     let data =await res.json()
     console.log(data)
    let parent = document.getElementById("pro-detail")
-
    let child = `
     <img src="${data.thumbnail}"alt="${data.title}">
    <h1>${data.title}</h1>
-   <p>description : ${data.description}</p>
-   <p>brand : ${data.brand}</p>
-   <p>price : $${data.price}</p>
-   <p>warranty : ${data.warrantyInformation}</p>
-   <p>rating : ${data.rating}</p>
-   <p>availability : ${data.availabilityStatus}</p>
-   <p>return policy : ${data.returnPolicy}</p>
-   <p>category : ${data.category}</p>
-   <p>images : ${data.warrantyInformation}</p>
+   <p><b>description</b>  : ${data.description}</p>
+   <p><b>brand</b>        : ${data.brand}</p>
+   <p><b>price</b>        :$${data.price}</p>
+   <p><b>warranty</b>     : ${data.warrantyInformation}</p>
+   <p><b>rating</b>       : ${data.rating}</p>
+   <p><b>availability</b> : ${data.availabilityStatus}</p>
+   <p><b>return policy</b>: ${data.returnPolicy}</p>
+   <p><b>category</b>     : ${data.category}</p>
+   <p><b>images</b>       : ${data.warrantyInformation}</p>
 
    `
    

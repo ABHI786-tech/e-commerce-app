@@ -13,7 +13,6 @@ itemData.forEach((item) => {
     `
 //     console.log(cartChild)
 // console.log(item)
-// cartChild = document.createElement("li")
 // cartParent.innerHTML +=cartChild;
 const cartlist = document.createElement("li");
       cartlist.innerHTML = cartChild;

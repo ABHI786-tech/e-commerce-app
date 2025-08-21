@@ -75,6 +75,30 @@ function product_detail(id) {
 }
 
 
+//navigate login page to profile page
+
+const loginButton = document.getElementById('user');
+const profileButton = document.getElementById('profile');
+
+function LoggedIn() {
+  return localStorage.getItem('accessToken') !== null;
+}
+
+function hiddenbtn() {
+  if (LoggedIn()) {
+    loginButton.style.display = 'none';
+    profileButton.style.display = 'content';
+  } else {
+    loginButton.style.display = 'content';
+    profileButton.style.display = 'none';
+  }
+}
+hiddenbtn();
+
+
+
+
+
 
 
 

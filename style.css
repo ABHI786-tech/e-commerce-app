@@ -18,6 +18,7 @@ body {
     position: sticky;
     top: 0;
     width: 100%;
+
 }
 
 .navigation {
@@ -35,25 +36,28 @@ body {
     font-style: normal;
   
 }
+.navigation a{
+   color: white;
+text-decoration: none;
+cursor: pointer;
+}
 
-.navigation a {
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-    padding: 12px;
-    margin: 3%;
+.nav{
+     padding: 12px;
+    margin: 2%;
 }
 
 #cart {
-    float: inline-end;
-    margin-top: -12px;
+    float:right;
+    margin-top: -10px;
     background-color: rgb(22, 22, 83);;
-    color: aliceblue;
+    /* color: aliceblue; */
     border-radius: 12px;
+    margin-right: 4%;
+    padding: 9px;
+    
+
 }
-
-
-
 a:hover {
     background-color: rgba(7, 7, 48, 0.733);
 }
@@ -66,10 +70,14 @@ a:hover {
     color: white;
     padding: 10px;
     text-align: center;
+
+}
+#product-container{
+    margin-bottom: 30px;
 }
 
 #product-container li {
-    background-color: rgb(156, 219, 219);
+    background-color: rgb(190, 223, 223);
     width: 100%;
     max-width:320px ;
     /* height: 420px; */
