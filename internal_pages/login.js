@@ -15,9 +15,36 @@ fetch('https://dummyjson.com/auth/login',{
 })
 .then(async (res) =>{
 let data= await res.json()
-  console.log(data)
 let api = localStorage.setItem("accessToken",data.accessToken)
+
+
+if(data.accessToken){
+  alert("Login Successful")
+  window.location.href = "/e-commerce-app/index.html"
+} else if(!data.accessToken){
+  let noAccess= document.getElementById("messages")
+  noAccess.innerHTML= data.message;
+ }
+
 })
-.catch(err => console.log(err,"error"))
+.catch(err => console.log(err,"login error"))
 
 }
+
+
+
+
+
+
+function showPass(){
+ const hiddenWord = document.getElementById("pass")
+const typeoff = hiddenWord.getAttribute("type")
+ if(typeoff==="password"){
+  hiddenWord.setAttribute("type","text")
+ }else{
+  hiddenWord.setAttribute("type","password")
+ }
+
+}
+
+ 

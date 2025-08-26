@@ -20,7 +20,7 @@ fetch('https://dummyjson.com/auth/me', {
     <p><b>Last Name</b> : ${profiledata.lastName}</p><br>
     <p><b>email</b> : ${profiledata.email}</p><br>
     <p><b>phone</b> : ${profiledata.phone}</p><br>
-    <p><b>address</b> : ${profiledata.address}</p><br>
+    <p><b>address</b> : ${profiledata.address.address}</p><br>
     `
         profileParent.innerHTML += profilechild
         // console.log(profilechild)
