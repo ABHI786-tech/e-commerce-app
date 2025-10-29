@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="/e-commerce-app/style.css">
+    <style>
+        h2 {
+            text-align: center;
+            font-size: 40px;
+        }
+
+        .user {
+            background-color: rgb(166, 221, 221);
+            padding: 20px;
+
+
+        }
+
+        .loginData {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #230f99;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .eye {
+            float: inline-end;
+            position: relative;
+            top: -32px;
+            right: 18px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="header">
+            <h1> MEGA STORE</h1>
+        </div>
+        <div class="navigation"><a href="/e-commerce-app/index.html" class="nav">home</a>
+            <a href="/e-commerce-app/internal_pages/profile.html" id="profile" class="nav">Profile</a>
+        </div>
+
+        <div class="user">
+            <h2>Login </h2><br>
+
+
+            <div class="loginData">
+                <form action="">
+                    <div><label for="userName"><b>Username :</b></label>
+                        <input type="text" id="userName" placeholder="Enter Username" name="userName" required>
+                    </div>
+
+                    <div><label for="pass"><b>Password :</b></label>
+                        <input type="password" id="pass" placeholder="Enter Password" name="pass" required>
+                        <span class="eye" onclick="showPass()">^</span>
+                    </div>
+                    <div id="messages"></div>
+                    <button onclick="loginNow()" type="button">Login</button>
+                    <a href="/e-commerce-app/internal_pages/profile.html" type="button"></a>
+
+                </form>
+            </div>
+        </div>
+        <div class="footer">
+            copyright@ 2025 user friendly website
+        </div>
+    </div>
+    <script src="/e-commerce-app/script.js"></script>
+    <script src="/e-commerce-app/internal_pages/login.js"></script>
+
+</body>
+
+</html>

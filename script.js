@@ -24,7 +24,7 @@ fetch('https://dummyjson.com/products/')
       productli.innerHTML = productHTML;
       container.appendChild(productli);
     });
-  }).catch(error => console.error('Error fetching products:', error));
+  }).catch(error => console.log('Error fetching products:', error));
 
 // Localstorage Referance 
 let memory = JSON.parse(localStorage.getItem("order"))
@@ -73,6 +73,30 @@ let addItem = (product) => {
 function product_detail(id) {
   window.location.href = `http://127.0.0.1:5500/e-commerce-app/internal_pages/discription.html?id=${id}`
 }
+
+
+//navigate login page to profile page
+
+const loginButton = document.getElementById('user');
+const profileButton = document.getElementById('profile');
+
+function LoggedIn() {
+  return localStorage.getItem('accessToken') !== null;
+}
+
+function hiddenbtn() {
+  if (LoggedIn()) {
+    loginButton.style.display = 'none';
+    profileButton.style.display = 'content';
+  } else {
+    loginButton.style.display = 'content';
+    profileButton.style.display = 'none';
+  }
+}
+hiddenbtn();
+
+
+
 
 
 
