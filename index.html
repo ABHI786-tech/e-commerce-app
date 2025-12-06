@@ -5,39 +5,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>e commerce website</title>
-    <link rel="stylesheet" href="/e-commerce-app/style.css">
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mozilla+Headline:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
 
 </head>
 
 <body>
-    <div class="box">
-        <div class="header">
-            <h1> MEGA STORE</h1>
-        </div>
-        <div class="navigation">
-            <a href="/e-commerce-app/index.html" class="nav">home</a>
-            <a href="/e-commerce-app/internal_pages/about.html" class="nav">about</a>
-            <a href="/e-commerce-app/internal_pages/contact us.html" class="nav">contact</a>
-            <a href="/e-commerce-app/internal_pages/login.html" id="user" class="nav">login</a>
-            <a href="/e-commerce-app/internal_pages/profile.html" id="profile" class="nav">Profile</a>
-            <a href="/e-commerce-app/internal_pages/cart.html" id="cart" >0</a>
-        </div>
-        <div class="main">
-            <ul class="product" id="product-container" style="list-style-type: none;">
-                <!-- <a href="/e-commerce-app/internal_pages/discription.html">new</a> -->
 
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">MEGA STORE</a>
 
-            </ul>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./internal_pages/about.html">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./internal_pages/contactUs.html">Contact Us</a>
+                    </li>
+
+                    <li class="nav-item" id="user">
+                        <a class="nav-link" href="./internal_pages/login.html">Login</a>
+                    </li>
+
+                    <li class="nav-item" id="profile">
+                        <a class="nav-link" href="./internal_pages/profile.html">Profile</a>
+                    </li>
+                </ul>
+
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search">
+                    <button class="btn btn-light" type="submit">Search</button>
+                </form>
+
+                <button type="button" class="btn btn-outline-light ms-3" id="cart"
+                    onclick="window.location.href='/e-commerce-app/internal_pages/cart.html'">0</button>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Carousel -->
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <img src="https://media.istockphoto.com/id/2176423864/photo/a-display-stand-at-a-clothing-store-promoting-a-50-flat-off-sale-for-black-friday-featuring.webp"
+                    class="d-block w-100" height="600px">
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://media.istockphoto.com/id/2150260225/photo/closeup-of-young-asian-woman-live-streaming-on-phone-show-new-collection-fashion-clothes-to.jpg"
+                    class="d-block w-100" height="600px">
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://media.istockphoto.com/id/2158156750/photo/close-up-of-man-sitting-in-fitting-room.jpg"
+                    class="d-block w-100" height="600px">
+            </div>
+
         </div>
 
-        <div class="footer">
-            copyright@ 2025 user friendly website
-        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
     </div>
-    <script src="script.js"></script>
+
+    <!-- Product Section -->
+    <div class="main">
+        <ul class="product" id="product-container"></ul>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        © 2025 Mega Store – User Friendly Website
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./script.js"></script>
+
 </body>
 
 </html>
