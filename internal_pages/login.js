@@ -1,50 +1,43 @@
+// simple login function (fresher-friendly)
 function loginNow() {
-let email= document.getElementById("userName").value 
-let password= document.getElementById("pass").value
+  let username = document.getElementById("userName").value;
+  let password = document.getElementById("pass").value;
+  let messageBox = document.getElementById("messages");
 
-console.log(email);
-console.log(password);
+  // basic validation
+  if (!username || !password) {
+    messageBox.innerText = "Please fill all fields";
+    return;
+  }
 
-fetch('https://dummyjson.com/auth/login',{
-  method: "post" ,
-  headers: { 'Content-Type': `application/json` },
-  body: JSON.stringify({
-   username:`${email}` ,
-    password: `${password}`
-})
-})
-.then(async (res) =>{
-let data= await res.json()
-let api = localStorage.setItem("accessToken",data.accessToken)
-
-
-if(data.accessToken){
-  alert("Login Successful")
-  window.location.href = "/e-commerce-app/index.html"
-} else if(!data.accessToken){
-  let noAccess= document.getElementById("messages")
-  noAccess.innerHTML= data.message;
- }
-
-})
-.catch(err => console.log(err,"login error"))
-
+  // dummy login (for learning)
+  fetch('https://dummyjson.com/auth/login', {
+    method: "POST",
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      username: username,
+      password: password
+    })
+  })
+  .then(async res => {
+    let data = await res.json();
+    
+    if (data.accessToken) {
+      localStorage.setItem("accessToken", data.accessToken);
+      alert("Login Successful!");
+      window.location.href = "../index.html";
+    } else {
+      messageBox.innerText = data.message || "Login failed";
+    }
+  })
+  .catch(err => {
+    console.log(err, "Login error");
+    messageBox.innerText = "Something went wrong. Try again!";
+  });
 }
 
-
-
-
-
-
-function showPass(){
- const hiddenWord = document.getElementById("pass")
-const typeoff = hiddenWord.getAttribute("type")
- if(typeoff==="password"){
-  hiddenWord.setAttribute("type","text")
- }else{
-  hiddenWord.setAttribute("type","password")
- }
-
+// show/hide password
+function togglePassword() {
+  let passField = document.getElementById("pass");
+  passField.type = passField.type === "password" ? "text" : "password";
 }
-
- 

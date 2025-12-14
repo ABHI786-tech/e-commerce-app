@@ -1,28 +1,38 @@
+// Getting token from localStorage
+// Token is saved when user logs in
+let token = localStorage.getItem("accessToken");
 
-let Token = localStorage.getItem("accessToken")
-console.log(Token)
-fetch('https://dummyjson.com/auth/me', {
-    method: 'GET',
-    headers: {
-        'Authorization': `Bearer ${Token}`, // Pass JWT via Authorization header
-        "Access-Control-Allow-Origin": "*",
-    },
-    // credentials: 'include',
+// Just checking if token exists
+if (!token) {
+  alert("Please login first");
+  window.location.href = "login.html";
+}
+
+// Fetching logged-in user profile
+fetch("https://dummyjson.com/auth/me", {
+  method: "GET",
+  headers: {
+    Authorization: `Bearer ${token}`
+  }
 })
-    .then(async res => {
-        let profiledata = await res.json()
-        console.log(profiledata)
-        let profileParent = document.getElementById("profile_cart")
-        let profilechild = `
-    <img src="${profiledata.image}"><br>
-    <p><b>username</b> : ${profiledata.username}</p><br>
-    <p><b>First Name</b> : ${profiledata.firstName}</p><br>
-    <p><b>Last Name</b> : ${profiledata.lastName}</p><br>
-    <p><b>email</b> : ${profiledata.email}</p><br>
-    <p><b>phone</b> : ${profiledata.phone}</p><br>
-    <p><b>address</b> : ${profiledata.address.address}</p><br>
-    `
-        profileParent.innerHTML += profilechild
-        // console.log(profilechild)
-    })
-    .catch(err => console.log(err))
+  .then(async (res) => {
+    let profileData = await res.json();
+
+    // Parent container
+    let profileParent = document.getElementById("profile_cart");
+
+    // Creating profile UI (simple and readable)
+    profileParent.innerHTML = `
+      <img src="${profileData.image}" class="profile-img" alt="profile image">
+
+      <p><b>Username:</b> ${profileData.username}</p>
+      <p><b>First Name:</b> ${profileData.firstName}</p>
+      <p><b>Last Name:</b> ${profileData.lastName}</p>
+      <p><b>Email:</b> ${profileData.email}</p>
+      <p><b>Phone:</b> ${profileData.phone}</p>
+      <p><b>Address:</b> ${profileData.address.address}</p>
+    `;
+  })
+  .catch((err) => {
+    console.log("Profile fetch error:", err);
+  });

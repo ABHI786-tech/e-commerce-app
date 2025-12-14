@@ -1,151 +1,157 @@
-/* ---------------------- */
-/* NAVBAR STYLING */
-/* ---------------------- */
+/* basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.page-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}
+/* navbar */
 nav {
-    font-family: "Mozilla Headline", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-    padding: 12px 20px;
+  font-family: "Mozilla Headline", sans-serif;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
 }
 
-/* ---------------------- */
-/* FOOTER */
-/* ---------------------- */
-.footer {
-    width: 100%;
-    background: #0d6efd;
-    color: white;
-    padding: 14px;
-    text-align: center;
-    font-size: 1.1rem;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.20);
-    margin-top: 40px;
+/* carousel image */
+.carousel img {
+  height: 500px;
+  object-fit: cover;
 }
 
-/* ---------------------- */
-/* PRODUCT LIST CONTAINER */
-/* ---------------------- */
+/* product grid */
 #product-container {
-    margin-bottom: 50px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 25px;
+  padding: 0;
 }
 
-/* Product card/grid */
-ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 28px;
-    width: 100%;
-    padding: 20px;
-     list-style: none;
-
-}
-
-/* ---------------------- */
-/* PRODUCT CARD STYLING */
-/* ---------------------- */
+/* product card */
 #product-container li {
-   background: linear-gradient(to bottom, #adb8da, #8a9edb);
-    border-radius: 15px;
-    padding: 15px;
-    max-width: 330px;
-    width: 100%;
-    box-shadow: 0 8px 32px rgba(134, 134, 134, 0.973);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    text-align: center;
-
-    
-
-
+  background: linear-gradient(to bottom, #adb8da, #8a9edb);
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 #product-container li:hover {
-    transform: translateY(-6px);
-    box-shadow: 0px 6px 18px rgba(0,0,0,0.20);
+  transform: translateY(-6px);
 }
 
-/* Image inside card */
+/* product image */
 #product-container img {
-    width: 85%;
-    height: 250px;
-    object-fit: contain;
-    border-radius: 10px;
-    margin-bottom: 10px;
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 10px;
 }
 
-/* ---------------------- */
-/* ADD TO CART BUTTON */
-/* ---------------------- */
-#add_Tocart {
-    background-color: #0a41f7d0;
-    color: white;
-    font-weight: 600;
-    width: 100%;
-    padding: 10px;
-    border-radius: 9px;
-    margin-top: 10px;
-    border: none;
-    transition: 0.3s;
+/* text */
+#product-container h3 {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
-#add_Tocart:hover {
-    background-color: #ffffff;
-    color: #0a41f7d0;
-    border: 2px solid #0a41f7d0;
+#product-container p {
+  margin: 5px 0;
 }
 
-/* ---------------------- */
-/* CAROUSEL IMAGE FIX */
-/* ---------------------- */
-.carousel img {
-    object-fit: cover;
+/* add to cart button */
+.addCartBtn {
+  background: #0d6efd;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  margin-top: 10px;
 }
 
-
-#product-container li h3,
-#product-container li h4,
-#product-container li h5 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #1f1f1f;
-    margin: 10px 0 5px;
-    letter-spacing: 0.5px;
-}
-
-#product-container li p {
-    font-size: 0.95rem;
-    color: #333;
-    margin: 0;
-    line-height: 1.4;
-    font-weight: 400;
-}
-
-#product-container li .price {
-    font-size: 1.15rem;
-    font-weight: 800;
-    color: #0b306f;
-    margin-top: 10px;
-}
-
-#product-container li button {
-    margin-top: 12px;
-    padding: 8px 14px;
-    border-radius: 10px;
-    font-weight: 600;
-    border: none;
-    background: #0d6efd;
-    color: white;
-    transition: all 0.3s ease;
-    margin-bottom: 5px;
-    bottom: 4px;
-    left: 2px;
-    right: 2px;
-    
+.addCartBtn:hover {
+  background: #074ac7;
 }
 
 
-#product-container li button:hover {
-    background: #074ac7;
-    transform: translateY(-3px);
+
+/*  ===============================
+   LOGIN CARD
+   ===============================  */
+.login-card {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  padding: 25px;
 }
+
+.login-card input {
+  border-radius: 6px;
+}
+
+.login-card button {
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* show/hide password icon */
+.login-card span {
+  font-size: 1.1rem;
+}
+
+/* ===============================
+   FOOTER
+   =============================== */
+.footer {
+  background-color: #0d6efd;
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+  padding: 14px 10px;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+  margin-top: auto; /* important for sticky footer */
+}
+
+
+/* ===============================
+   MESSAGES
+   =============================== */
+#messages {
+  font-size: 0.9rem;
+  min-height: 20px;
+}
+
+
+/* footer */
+.footer {
+  background: #0d6efd;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 50px;
+}
+/* ===============================
+   RESPONSIVE
+   =============================== */
+@media(max-width: 576px) {
+  .login-card {
+    padding: 20px 15px;
+  }
+} 

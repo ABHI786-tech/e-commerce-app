@@ -1,86 +1,133 @@
+// ===============================
+// FETCH PRODUCTS (Dummy API)
+// ===============================
 
-// Fetch all product list
-fetch('https://dummyjson.com/products/')
-  .then(response => response.json())
+fetch("https://dummyjson.com/products")
+  .then(res => res.json())
   .then(data => {
+
     const products = data.products;
-    const container = document.getElementById('product-container');
+    const container = document.getElementById("product-container");
 
     products.forEach(product => {
 
-      const productli = document.createElement('li');
+      const li = document.createElement("li");
 
-      productli.innerHTML = `
-        <div class="product-card">
-
-          <img src="${product.thumbnail}" alt="${product.title}">
-
-          <h2>${product.title}</h2>
-
-          <p><strong>Price:</strong> $${product.price}</p>
-
-          <p><strong>Stock:</strong> ${product.stock > 0 ? "Available" : "Out of Stock"}</p>
-
-          <button class="btn btn-primary w-100 addCartBtn">
-            Add to Cart
-          </button>
-
-        </div>
+      li.innerHTML = `
+        <img src="${product.thumbnail}" alt="${product.title}">
+        <h3>${product.title}</h3>
+        <p>Price: $${product.price}</p>
+        <p>${product.stock > 0 ? "In Stock" : "Out of Stock"}</p>
+        <button class="addCartBtn">Add to Cart</button>
       `;
 
-      // 🔥 If user clicks anywhere on product card → add to cart
-      productli.onclick = () => addItem(product);
+      // 🔹 clicking card → product detail page
+      li.onclick = () => {
+        product_detail(product.id);
+      };
 
-      // 🔥 If user clicks on add to cart button → add to cart (without double click)
-      productli.querySelector(".addCartBtn").onclick = (event) => {
-        event.stopPropagation(); // prevent double action
-        addItem(product);
-      }
+      // 🔹 add to cart button (stop bubbling)
+      li.querySelector(".addCartBtn").onclick = (e) => {
+        e.stopPropagation();
+        addToCart(product);
+      };
 
-      container.appendChild(productli);
+      container.appendChild(li);
     });
   })
-  .catch(error => console.log('Error fetching products:', error));
+  .catch(err => {
+    console.log("Error while fetching products", err);
+  });
 
 
+// ===============================
+// PRODUCT DETAIL REDIRECT
+// ===============================
 
-// ===========================
-// CART SYSTEM
-// ===========================
+function product_detail(id) {
+  window.location.href = `${window.location.origin||"file:///D:/New%20folder17-11-25"}/e-commerce-app/internal_pages/discription.html?id=${id}`;
+}
 
-// Localstorage Reference 
-let memory = JSON.parse(localStorage.getItem("order"));
-let yourOrder = memory?.length ? [...memory] : [];
 
-// DOM Reference
-let cart = document.getElementById("cart");
-cart.innerHTML = yourOrder?.length ?? 0;
+// ===============================
+// CART LOGIC
+// ===============================
 
-// Add To Cart Function
-let addItem = (product) => {
+let savedCart = JSON.parse(localStorage.getItem("order"));
+let cartItems = savedCart ? savedCart : [];
 
-  let basket = {
+let cartBtn = document.getElementById("cart");
+cartBtn.innerText = cartItems.length;
+
+function addToCart(product) {
+
+  let item = {
     id: product.id,
-    quantity: 1,
     title: product.title,
     price: product.price,
-    thumbnail: product.thumbnail
+    thumbnail: product.thumbnail,
+    quantity: 1
   };
 
-  // Check item already in cart
-  let existing = yourOrder.find(item => item.id === basket.id);
+  let found = cartItems.find(p => p.id === item.id);
 
-  if (existing) {
-    existing.quantity += 1;
+  if (found) {
+    found.quantity += 1;
   } else {
-    yourOrder.push(basket);
+    cartItems.push(item);
   }
 
-  localStorage.setItem("order", JSON.stringify(yourOrder));
-
-  cart.innerHTML = yourOrder.length;
-};
-
+  localStorage.setItem("order", JSON.stringify(cartItems));
+  cartBtn.innerText = cartItems.length;
+}
 
 
+// ===============================
+// LOGIN / PROFILE VISIBILITY
+// ===============================
 
+const loginBtn = document.getElementById("login");
+const loginLink = loginBtn.querySelector("a");
+const profileBtn = document.getElementById("profile");
+const cart = document.getElementById("cart");
+
+function isLoggedIn() {
+  return localStorage.getItem("accessToken") !== null;
+}
+
+function logoutUser() {
+  const confirmLogout = confirm("Are you sure you want to logout?");
+
+  if (confirmLogout) {
+    localStorage.removeItem("accessToken");
+
+    window.location.href =
+      `${window.location.origin|| "file:///D:/New%20folder17-11-25"}/e-commerce-app/index.html`;
+  }
+}
+
+function toggleAuthButtons() {
+  if (isLoggedIn()) {
+    // change Login → Logout
+    loginLink.innerText = "Logout";
+    loginLink.href = "#";
+
+    loginLink.onclick = function (e) {
+      e.preventDefault();
+      logoutUser();
+    };
+
+    profileBtn.style.display = "inline-block";
+  } else {
+    // normal login
+    cart.style.display = "none";
+    loginLink.innerText = "Login";
+    // loginLink.href = `${window.location.origin||"file:///D:/New%20folder17-11-25"}/e-commerce-app/login.html`;
+    loginLink.onclick = null;
+
+    profileBtn.style.display = "none";
+  }
+}
+
+// call on page load
+toggleAuthButtons();

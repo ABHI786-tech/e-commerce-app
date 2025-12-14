@@ -1,41 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>about</title>
-    <link rel="stylesheet" href="/e-commerce-app/style.css">
-    <style>
-        h2{
-            text-align: center;
-            font-size: 60px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mega Store | About</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #0d6efd;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: auto;
+    }
+
+     .content ul {
+      text-align: left;
+      max-width: 500px;
+      margin: auto;
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
 
-<body>
-    <div>
-        <div class="box">
-            <div class="header">
-                <h1> MEGA STORE</h1>
-            </div>
-            <div class="navigation">
-                <a href="/e-commerce-app/index.html" class="nav">home</a>
-            <a href="/e-commerce-app/internal_pages/about.html" class="nav">about</a>
-            <a href="/e-commerce-app/internal_pages/contact us.html" class="nav">contact</a>
-            <a href="/e-commerce-app/internal_pages/login.html" id="user" class="nav">login</a>
-            <a href="/e-commerce-app/internal_pages/profile.html" id="profile" class="nav">Profile</a>
-            <a href="/e-commerce-app/internal_pages/cart.html" id="cart" >0</a>
-            </div>
-            <h2>about us</h2>
-            <div class="main"></div>
-            <div class="footer">
-            copyright@ 2025 eco friendly website
-        </div>
-        </div>
-    </div>
-    <script src="/e-commerce-app/internal_pages/about.js"></script>
-</body>
+<body class="d-flex flex-column min-vh-100">
 
+   <!-- ================= NAVBAR ================= -->
+  <nav class="navbar navbar-expand-lg bg-primary navbar-dark sticky-top">
+    <div class="container-fluid">
+
+      <a class="navbar-brand fw-bold" href="#">MEGA STORE</a>
+
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link " href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="../internal_pages/about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="../internal_pages/contactUs.html">Contact</a></li>
+          <li id="profile" class="nav-item"><a class="nav-link" href="../internal_pages/profile.html">Profile</a></li>
+          <li id="login" class="nav-item"><a class="nav-link" href="../internal_pages/login.html">Login</a></li>
+
+
+
+        </ul>
+
+        <form class="d-flex">
+          <input class="form-control me-2" placeholder="Search product">
+          <button class="btn btn-light">Search</button>
+        </form>
+
+       <a class="nav-link" href="./internal_pages/cart.html">
+        <button class="btn btn-outline-light ms-3"   id="cart">
+            0
+        </button>
+         </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+ <main class="content">
+    <div class="container my-5">
+
+      <h2 class="text-center fw-bold mb-4">About This Project</h2>
+
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+
+          <div class="card shadow p-4">
+
+            <p>
+              Mega Store is a simple e-commerce web application created to
+              understand how real-world websites work.
+              The main focus of this project is learning frontend development
+              concepts by building features step by step.
+            </p>
+
+            <p>
+              While working on this project, I learned how to design responsive
+              user interfaces using <b>HTML, CSS, and Bootstrap</b>.
+              I also practiced using <b>JavaScript</b> to handle dynamic data,
+              user interactions, and browser storage.
+            </p>
+
+            <p>
+              This project helped me understand important concepts like:
+            </p>
+
+            <ul>
+              <li>Creating reusable layouts like navbar and footer</li>
+              <li>Fetching data from APIs and displaying it dynamically</li>
+              <li>Using localStorage for cart and login management</li>
+              <li>Handling user authentication with tokens</li>
+              <li>Basic error handling and UI feedback</li>
+            </ul>
+
+            <p>
+              The goal of this project was not to make everything perfect,
+              but to learn by building and fixing problems step by step.
+              Each page of this application helped me improve my understanding
+              of frontend logic and UI structure.
+            </p>
+
+            <p class="text-muted" style="font-size:14px;">
+              * This project is built for learning purposes and to showcase practical frontend skills.
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer mt-auto py-3 text-center">
+    © 2025 Mega Store – User Friendly Website
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../script.js"></script>
+
+</body>
 </html>

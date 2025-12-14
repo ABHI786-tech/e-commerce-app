@@ -1,109 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>e commerce website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mega Store | Home</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Mozilla+Headline:wght@200..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Mozilla+Headline:wght@200..700&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg bg-primary navbar-dark sticky-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">MEGA STORE</a>
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar navbar-expand-lg bg-primary navbar-dark sticky-top">
+    <div class="container-fluid">
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+      <a class="navbar-brand fw-bold" href="#">MEGA STORE</a>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
-                    </li>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="./internal_pages/about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="./internal_pages/contactUs.html">Contact</a></li>
+          <li id="profile" class="nav-item"><a class="nav-link" href="./internal_pages/profile.html">Profile</a></li>
+          <li id="login" class="nav-item"><a class="nav-link" href="./internal_pages/login.html">Login</a></li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="./internal_pages/about.html">About</a>
-                    </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="./internal_pages/contactUs.html">Contact Us</a>
-                    </li>
 
-                    <li class="nav-item" id="user">
-                        <a class="nav-link" href="./internal_pages/login.html">Login</a>
-                    </li>
+        </ul>
 
-                    <li class="nav-item" id="profile">
-                        <a class="nav-link" href="./internal_pages/profile.html">Profile</a>
-                    </li>
-                </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" placeholder="Search product">
+          <button class="btn btn-light">Search</button>
+        </form>
 
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search">
-                    <button class="btn btn-light" type="submit">Search</button>
-                </form>
-
-                <button type="button" class="btn btn-outline-light ms-3" id="cart"
-                    onclick="window.location.href='/e-commerce-app/internal_pages/cart.html'">0</button>
-
-            </div>
-        </div>
-    </nav>
+        <a class="nav-link" href="./internal_pages/cart.html">
+        <button class="btn btn-outline-light ms-3"   id="cart">
+            0
+        </button>
+         </a>
+      </div>
+    </div>
+  </nav>
 
     <!-- Hero Carousel -->
-    <div id="carouselExample" class="carousel slide">
-        <div class="carousel-inner">
-
-            <div class="carousel-item active">
-                <img src="https://media.istockphoto.com/id/2176423864/photo/a-display-stand-at-a-clothing-store-promoting-a-50-flat-off-sale-for-black-friday-featuring.webp"
-                    class="d-block w-100" height="600px">
-            </div>
-
-            <div class="carousel-item">
-                <img src="https://media.istockphoto.com/id/2150260225/photo/closeup-of-young-asian-woman-live-streaming-on-phone-show-new-collection-fashion-clothes-to.jpg"
-                    class="d-block w-100" height="600px">
-            </div>
-
-            <div class="carousel-item">
-                <img src="https://media.istockphoto.com/id/2158156750/photo/close-up-of-man-sitting-in-fitting-room.jpg"
-                    class="d-block w-100" height="600px">
-            </div>
-
-        </div>
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </button>
-
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </button>
+    <!-- <div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://media.istockphoto.com/id/2176423864/photo/a-display-stand-at-a-clothing-store-promoting-a-50-flat-off-sale.webp"
+          class="d-block w-100">
+      </div>
+      <div class="carousel-item">
+        <img src="https://media.istockphoto.com/id/2150260225/photo/closeup-of-young-asian-woman-live-streaming.webp"
+          class="d-block w-100">
+      </div>
     </div>
+  </div> -->
 
-    <!-- Product Section -->
-    <div class="main">
-        <ul class="product" id="product-container"></ul>
-    </div>
+  <!-- ================= PRODUCTS ================= -->
+  <div class="container my-5">
+    <h2 class="text-center fw-bold mb-4">Latest Products</h2>
 
-    <!-- Footer -->
-    <div class="footer">
-        © 2025 Mega Store – User Friendly Website
-    </div>
+    <ul id="product-container"></ul>
+  </div>
 
+  <!-- ================= FOOTER ================= -->
+  <div class="footer">
+    © 2025 Mega Store – Built for learning purpose
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./script.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
+  <!-- Custom JS -->
+  <script src="script.js"></script>
 </body>
-
 </html>
